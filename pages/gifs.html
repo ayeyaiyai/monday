@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href ="gif-style.css">
+  <title>Mon's Cheeky GIFs</title>
+</head>
+<body>
+  <audio controls autoplay>
+    <source src="../music/adagio.ogg" type="audio/ogg">
+    Your browser does not support the audio element.
+  </audio>
+  <div class="gif-body">
+    <div class="gif-title"><img src="../images/fire.gif" alt="fire" class="fire-gif">GIFS<img src="../images/fire.gif" alt="fire" class="fire-gif"></div>
+    <a href="./homepage.html" class="go-back"><img src="../images/go-back.gif"></a>
+    <img src="../images/skeleton.gif" alt="skeleton dance" id="skeleton-dance">
+    <img src="../images/skeleton-2.gif" alt="skeleton run" id="skeleton-run">
+    <a href="https://selfdefinition.org/science/Robert-Anton-Wilson-Prometheus-Rising.pdf" target="_blank"><img src="../images/demonread.gif" alt="demon read" id="demon-read"></a>
+    <a href="https://mangabuddy.com/fourteen/vol-1-chapter-1-chicken-george-prologue" target="_blank"><img src="../images/animebabe.gif" alt="anime babe" id="anime-babe"></a>
+    <img src="../images/dragon.gif" alt="dragon" id="dragon">
+    <a href="https://www.youtube.com/watch?v=TNV9g4zYhGc" target="_blank"><img src="../images/skeleton-3.gif" alt="skeleton run" id="skeleton-3"></a>
+    <img src="../images/skeleton-4.gif" alt="skeleton run" id="skeleton-4">
+    <img src="../images/skeleton-5.gif" alt="skeleton run" id="skeleton-5">
+    <img src="../images/ghoul.gif" alt="skeleton run" id="ghoul-1">
+    <img src="../images/ghoul2.gif" alt="skeleton run" id="ghoul-2">
+    <img src="../images/ghoul3.gif" alt="skeleton run" id="ghoul-3">
+  </div>
+
+  <script>
+    function randomizeGifLocation() {
+    var gifContainer = document.querySelector('.gif-body');
+    var gifs = Array.from(gifContainer.getElementsByTagName('img'));
+    var windowWidth = 1000;
+    var windowHeight = 1000;
+
+    gifs = gifs.filter(function(gif) {
+      var gifSrc = gif.getAttribute('src');
+      return (gifSrc !== '../images/fire.gif' && gifSrc !== '../images/go-back.gif');
+    });
+
+    gifs.forEach(function(gif, index) {
+      var newPositionX, newPositionY;
+      var maxAttempts = 10;
+      var currentAttempt = 0;
+
+      do {
+        newPositionX = Math.floor(Math.random() * (windowWidth - gif.offsetWidth)) + ((window.innerWidth - windowWidth) / 2);
+        newPositionY = Math.floor(Math.random() * (windowHeight - gif.offsetHeight)) + ((window.innerHeight - windowHeight) / 2);
+        currentAttempt++;
+      } while (checkOverlap(gif, gifs.slice(0, index), newPositionX, newPositionY) && currentAttempt < maxAttempts);
+
+      gif.style.position = 'absolute';
+      gif.style.left = newPositionX + 'px';
+      gif.style.top = newPositionY + 'px';
+    });
+  }
+
+  function checkOverlap(gif, previousGifs, x, y) {
+    var gifRect = gif.getBoundingClientRect();
+    var gifLeft = x;
+    var gifTop = y;
+    var gifRight = gifLeft + gifRect.width;
+    var gifBottom = gifTop + gifRect.height;
+
+    for (var i = 0; i < previousGifs.length; i++) {
+      var previousGifRect = previousGifs[i].getBoundingClientRect();
+      var previousGifLeft = parseFloat(previousGifs[i].style.left);
+      var previousGifTop = parseFloat(previousGifs[i].style.top);
+      var previousGifRight = previousGifLeft + previousGifRect.width;
+      var previousGifBottom = previousGifTop + previousGifRect.height;
+
+      if (
+        gifLeft < previousGifRight &&
+        gifRight > previousGifLeft &&
+        gifTop < previousGifBottom &&
+        gifBottom > previousGifTop
+      ) {
+        return true; // Overlapping detected
+      }
+    }
+
+    return false; // No overlapping
+  }
+
+  randomizeGifLocation();
+  </script>
+</body>
+</html>
