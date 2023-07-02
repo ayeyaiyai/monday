@@ -1,0 +1,272 @@
+@font-face {
+  font-family: 'rusuck';
+  src: url(fonts/Rusuck.otf);
+}
+
+@font-face {
+  font-family: 'doob';
+  src: url(fonts/doob.ttf);
+}
+
+@font-face {
+  font-family: 'prime-mono';
+  src: url(fonts/prime-mono-round.ttf);
+}
+
+@font-face {
+  font-family: 'arbo';
+  src: url(fonts/PlantasiaArbo-Bold.otf);
+}
+
+@font-face {
+  font-family: 'kuga';
+  src: url(fonts/kuga.ttf);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background-image: url('./images/background.png');
+  z-index: -1000;
+}
+
+a {
+  display: inline-block;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  z-index: 9999;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background-color: black;
+  height: 1050px;
+  width: 1075px;
+  border: 1px solid rgb(0, 255, 0);
+}
+
+.container-subtitle {
+  font-family: 'doob';
+  z-index: 1;
+  font-size: 1.2em;
+  font-weight: bold;
+  position: absolute;
+  top: 240px;
+  transform: translateX(64px);
+}
+
+.container-body {
+  display: flex;
+}
+
+.left-image {
+  position: absolute;
+}
+
+#good-to-share {
+  transform: 
+  translateX(-160px)
+  translateY(260px);
+}
+
+#got-html {
+  transform: 
+  translateX(-160px)
+  translateY(310px);
+  height: 38px;
+  width: 122px;
+}
+
+#runningman {
+  transform: 
+  translateX(-160px)
+  translateY(370px);
+  width: 122px;
+  height: auto;
+}
+
+#omw {
+  transform: 
+  translateX(-170px)
+  translateY(530px);
+}
+
+.links-section {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  transform: 
+  translateY(-80px)
+  translateX(-180px);
+  height: 300px;
+  width: 144px;
+  padding: 8px;
+  border:rgb(18, 175, 18) solid 4px;
+}
+
+.links-header {
+  width: 120px;
+  font-family: 'prime-mono';
+  font-size: 1.2em;
+  color:rgb(218, 105, 167);
+  margin-bottom: 32px;
+}
+
+.links-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-center {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-center-birthday {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-80px);
+  border:8px solid rgb(18, 175, 18);
+  width: 650px;
+  height: 675px;
+  padding: 12px;
+  font-family: 'prime-mono';
+}
+
+.container-center-title {
+  font-size: 3.6em;
+  color: rgb(218, 105, 167);
+}
+
+.container-center-body {
+  margin-bottom: 24px;
+}
+
+.monzone-text {
+  font-size: 1.5em;
+  color:rgb(218, 105, 167);
+}
+
+#keroppi-face-1 {
+  position: absolute;
+  transform:
+  scale(.3)
+  translateY(-620px)
+  translateX(850px);
+}
+
+#keroppi-face-2 {
+  position: absolute;
+  transform:
+  scale(.3)
+  translateY(-620px)
+  translateX(-750px)
+  rotate(-40deg);
+  z-index: -6;
+}
+
+.container-center-links {
+  display: flex;
+  flex-direction: column;
+  width: 650px;
+  padding: 12px;
+  border:8px solid rgb(18, 175, 18);
+  z-index: 999999999;
+}
+
+.container-right {
+  display: flex;
+  flex-direction: column;
+}
+
+#gamera-spin, .mon-cam {
+  position: absolute;
+}
+
+.mon-cam {
+  color: rgb(218, 105, 167);
+  font-size: 1.4em;
+  font-family: 'prime-mono';
+  transform: 
+  translateY(-92px) 
+  translateX(24px);
+}
+
+#gamera-spin {
+  transform: 
+  translateX(-18px)
+  translateY(-100px)
+  scale(.65);
+  border: 6px solid rgb(18, 175, 18);
+}
+
+#blinkie-1 {
+  position: absolute;
+  transform: 
+  translateY(140px)
+  translateX(25px);
+}
+
+#blinkie-2 {
+  position: absolute;
+  transform: 
+  translateY(168px)
+  translateX(25px);
+}
+
+#blinkie-3 {
+  position: absolute;
+  transform: 
+  translateY(196px)
+  translateX(25px);
+}
+
+#blinkie-4 {
+  position: absolute;
+  transform: 
+  translateY(224px)
+  translateX(25px);
+}
+
+#blinkie-5 {
+  position: absolute;
+  transform: 
+  translateY(252px)
+  translateX(25px);
+}
+
+#blinkie-6 {
+  position: absolute;
+  transform: 
+  translateY(280px)
+  translateX(25px);
+}
+
+#heart-gif {
+  position: absolute;
+  transform: 
+  translateY(308px)
+  translateX(25px);
+  width: 150px;
+  height: auto;
+}
+
+#constellation-gif {
+  position: absolute;
+  transform: 
+  translateY(486px)
+  translateX(25px);
+  width: 150px;
+  height: auto;
+}
